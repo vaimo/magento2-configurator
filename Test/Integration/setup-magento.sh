@@ -1,8 +1,5 @@
 #!/bin/sh
 
-echo packaging configurator
-tar czf configurator.tar.gz .
-
 echo Setting up Magento
 
 echo Disabling xdebug for performance
@@ -22,13 +19,7 @@ composer install
 
 php bin/magento setup:install --admin-email "test@test.com" --admin-firstname "CTI" --admin-lastname "Test" --admin-password "password123" --admin-user "admin" --backend-frontname admin --base-url "http://configurator.dev" --db-host 127.0.0.1 --db-name configurator --db-user root --session-save files --use-rewrites 1 --use-secure 0 -vvv
 
-echo Move configurator package into its own vendor directory
-mv ../configurator.tar.gz vendor/ctidigital/magento2-configurator/.
-
 cd vendor/ctidigital/magento2-configurator/
-
-echo Extract configurator into the right place
-tar -xf configurator.tar.gz
 
 echo Go to app etc folder
 cd ../../../app/etc
