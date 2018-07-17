@@ -1,5 +1,5 @@
 {
-  "name": "ctidigital/magento2-configurator",
+  "name": "vaimo/magento2-configurator",
   "description": "Keep magento persistently configured using files",
   "type":"magento2-module",
   "repositories": [
@@ -18,6 +18,9 @@
     "sebastian/phpcpd": "2.0.0",
     "satooshi/php-coveralls": "^1.0",
     "phpunit/phpunit": "4.1.0"
+  },
+  "conflict": {
+    "ctidigital/magento2-configurator": "*"
   },
   "version": "1.2.0",
   "autoload": {
